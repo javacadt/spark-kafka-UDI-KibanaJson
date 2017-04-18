@@ -34,7 +34,7 @@ public class UBIEventProcessor implements Serializable {
 	public void run(String topic) throws IOException, AnalysisException {
 		// Get properties
 		Properties props = new Properties();
-		props.load(UBIEventProcessor.class.getClassLoader().getResourceAsStream("vt.properties"));
+		props.load(UBIEventProcessor.class.getClassLoader().getResourceAsStream("ubi.properties"));
 		
 		// Initialize
 		int numThreads = Integer.parseInt(props.getProperty("KAFKA_THREAD_COUNT"));

@@ -21,7 +21,7 @@ public class UBIEventProducer {
 	
 	public UBIEventProducer() throws IOException {
 		Properties props = new Properties();
-		props.load(this.getClass().getClassLoader().getResourceAsStream("vt.properties"));
+		props.load(this.getClass().getClassLoader().getResourceAsStream("ubi.properties"));
 		// Prepare kafka properties
 		Properties kafkaProps = new Properties();
 		kafkaProps.put("metadata.broker.list", props.getProperty("KAFKA_BROKER_LIST"));
@@ -99,6 +99,8 @@ public class UBIEventProducer {
 		event.setIgnitionStatus(Integer.parseInt(fields[16]));
 		event.setWindshieldWiperStatus(Integer.parseInt(fields[17]));
 		event.setAbs(Integer.parseInt(fields[18]));
+		event.setTripId(fields[19]);
+		event.setIncidentType(fields[20]);
 		return event;
 	}
 }
