@@ -5,15 +5,31 @@ import java.io.Serializable;
 public class UBIData implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-	private String vin;
-	private float driverScore;
-	private int driverRank;
-	private float premiumDisc;
+	private static final String DUMMY = "DUMMY";
+	private String vin = DUMMY;
+	private String city = DUMMY;
+	private String model = DUMMY;
+	private float driverScore = 0;
+	private int driverRank = 0;
+	private float premiumDisc = 0;
+	private String infoDateTime;
 	public String getVin() {
 		return vin;
 	}
 	public void setVin(String vin) {
 		this.vin = vin;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getModel() {
+		return model;
+	}
+	public void setModel(String model) {
+		this.model = model;
 	}
 	public float getDriverScore() {
 		return driverScore;
@@ -39,6 +55,6 @@ public class UBIData implements Serializable {
 	public void setInfoDateTime(String infoDateTime) {
 		this.infoDateTime = infoDateTime;
 	}
-	private String infoDateTime;
+	
 	
 }

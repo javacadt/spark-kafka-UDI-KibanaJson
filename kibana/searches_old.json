@@ -1,0 +1,65 @@
+[
+  {
+    "_id": "f16e8cd0-e948-11e6-99da-93ec22c0ac1e",
+    "_type": "search",
+    "_source": {
+      "title": "Aggressive Driving Pattern",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "city",
+        "model"
+      ],
+      "sort": [
+        "_score",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"carevents\",\n  \"filter\": [\n    {\n      \"meta\": {\n        \"negate\": false,\n        \"index\": \"carevents\",\n        \"key\": \"query\",\n        \"value\": \"{\\\"constant_score\\\":{\\\"filter\\\":{\\\"bool\\\":{\\\"must\\\":[{\\\"terms\\\":{\\\"transGearPosition\\\":[\\\"fourth\\\",\\\"fifth\\\",\\\"sixth\\\",\\\"seventh\\\",\\\"eighth\\\"]}},{\\\"term\\\":{\\\"brakePedalStatus\\\":1}},{\\\"range\\\":{\\\"speed\\\":{\\\"gte\\\":50}}}],\\\"must_not\\\":[{\\\"term\\\":{\\\"vin\\\":\\\"DUMMY\\\"}}]}}}}\",\n        \"disabled\": false,\n        \"alias\": null\n      },\n      \"query\": {\n        \"constant_score\": {\n          \"filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"terms\": {\n                    \"transGearPosition\": [\n                      \"fourth\",\n                      \"fifth\",\n                      \"sixth\",\n                      \"seventh\",\n                      \"eighth\"\n                    ]\n                  }\n                },\n                {\n                  \"term\": {\n                    \"brakePedalStatus\": 1\n                  }\n                },\n                {\n                  \"range\": {\n                    \"speed\": {\n                      \"gte\": 50\n                    }\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"term\": {\n                    \"vin\": \"DUMMY\"\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"$state\": {\n        \"store\": \"appState\"\n      }\n    }\n  ],\n  \"highlight\": {\n    \"pre_tags\": [\n      \"@kibana-highlighted-field@\"\n    ],\n    \"post_tags\": [\n      \"@/kibana-highlighted-field@\"\n    ],\n    \"fields\": {\n      \"*\": {}\n    },\n    \"require_field_match\": false,\n    \"fragment_size\": 2147483647\n  },\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  }\n}"
+      }
+    }
+  },
+  {
+    "_id": "be323f60-e948-11e6-99da-93ec22c0ac1e",
+    "_type": "search",
+    "_source": {
+      "title": "Fuel-Efficient Driving Pattern",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "city",
+        "model"
+      ],
+      "sort": [
+        "_score",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"carevents\",\n  \"filter\": [\n    {\n      \"meta\": {\n        \"negate\": false,\n        \"index\": \"carevents\",\n        \"key\": \"query\",\n        \"value\": \"{\\\"constant_score\\\":{\\\"filter\\\":{\\\"bool\\\":{\\\"must\\\":[{\\\"terms\\\":{\\\"transGearPosition\\\":[\\\"fourth\\\",\\\"fifth\\\",\\\"sixth\\\",\\\"seventh\\\",\\\"eighth\\\"]}},{\\\"term\\\":{\\\"parkBrakeStatus\\\":0}},{\\\"term\\\":{\\\"brakePedalStatus\\\":0}},{\\\"range\\\":{\\\"speed\\\":{\\\"lte\\\":60}}},{\\\"range\\\":{\\\"accPedalPos\\\":{\\\"gte\\\":50}}}],\\\"must_not\\\":[{\\\"term\\\":{\\\"vin\\\":\\\"DUMMY\\\"}}]}}}}\",\n        \"disabled\": false,\n        \"alias\": null\n      },\n      \"query\": {\n        \"constant_score\": {\n          \"filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"terms\": {\n                    \"transGearPosition\": [\n                      \"fourth\",\n                      \"fifth\",\n                      \"sixth\",\n                      \"seventh\",\n                      \"eighth\"\n                    ]\n                  }\n                },\n                {\n                  \"term\": {\n                    \"parkBrakeStatus\": 0\n                  }\n                },\n                {\n                  \"term\": {\n                    \"brakePedalStatus\": 0\n                  }\n                },\n                {\n                  \"range\": {\n                    \"speed\": {\n                      \"lte\": 60\n                    }\n                  }\n                },\n                {\n                  \"range\": {\n                    \"accPedalPos\": {\n                      \"gte\": 50\n                    }\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"term\": {\n                    \"vin\": \"DUMMY\"\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"$state\": {\n        \"store\": \"appState\"\n      }\n    }\n  ],\n  \"highlight\": {\n    \"pre_tags\": [\n      \"@kibana-highlighted-field@\"\n    ],\n    \"post_tags\": [\n      \"@/kibana-highlighted-field@\"\n    ],\n    \"fields\": {\n      \"*\": {}\n    },\n    \"require_field_match\": false,\n    \"fragment_size\": 2147483647\n  },\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  }\n}"
+      }
+    }
+  },
+  {
+    "_id": "5f1f1bb0-edd5-11e6-bc9d-95e992b73a0c",
+    "_type": "search",
+    "_source": {
+      "title": "Alerts Pattern",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "vin",
+        "message"
+      ],
+      "sort": [
+        "_score",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"caralerts\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"*\"\n    }\n  },\n  \"filter\": [\n    {\n      \"meta\": {\n        \"negate\": true,\n        \"index\": \"caralerts\",\n        \"key\": \"vin\",\n        \"value\": \"DUMMY\",\n        \"disabled\": false,\n        \"alias\": null\n      },\n      \"query\": {\n        \"match\": {\n          \"vin\": {\n            \"query\": \"DUMMY\",\n            \"type\": \"phrase\"\n          }\n        }\n      },\n      \"$state\": {\n        \"store\": \"appState\"\n      }\n    }\n  ],\n  \"highlight\": {\n    \"pre_tags\": [\n      \"@kibana-highlighted-field@\"\n    ],\n    \"post_tags\": [\n      \"@/kibana-highlighted-field@\"\n    ],\n    \"fields\": {\n      \"*\": {}\n    },\n    \"require_field_match\": false,\n    \"fragment_size\": 2147483647\n  }\n}"
+      }
+    }
+  }
+]

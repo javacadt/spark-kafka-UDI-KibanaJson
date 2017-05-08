@@ -86,6 +86,8 @@ public class UBIEventProcessor implements Serializable {
 
 					System.out.println("Applying trip analysis for UBI...");
 					String sql = "SELECT history.vin as vin"
+							+ ",history.city as city"
+							+ ",history.model as model"
 							+ ",date_format(history.timestamp,'hh:mm:ss') as timestamp"
 							+ ",date_format(history.timestamp,'YYYY-MM-dd') as date"
 							+ ",(CASE WHEN hour(history.timestamp)>= 18 THEN 'night' ELSE 'day' END) AS tripTime"
@@ -94,7 +96,7 @@ public class UBIEventProcessor implements Serializable {
 		                    +",history.incidentType as incidentType"
 		                    +" FROM events_history as history,events_stream as stream"
 		                    +" WHERE history.vin=stream.vin"
-		                    +" GROUP BY history.timestamp,history.vin,history.incidentType,history.tripId"
+		                    +" GROUP BY history.timestamp,history.vin,history.incidentType,history.tripId,history.city,history.model"
 		                    + " ORDER BY history.timestamp";
 					Dataset<Row> incidentData = spark.sql(sql);
 //					incidentData.show(10);
@@ -107,6 +109,8 @@ public class UBIEventProcessor implements Serializable {
 					sql = "select"
 							+ " incident.date as date"
 							+ ",incident.vin as vin"
+							+ ",incident.city as city"
+							+ ",incident.model as model"
 							+ ",trip.count as trips"
 							 + ",count(CASE WHEN incident.incidentType='OverSpeed' THEN incident.tripId ELSE NULL END) AS OSCount"
 			                 + ",count(CASE WHEN incident.incidentType='HardBraking' THEN incident.tripId ELSE NULL END) AS HBCount"
@@ -117,7 +121,7 @@ public class UBIEventProcessor implements Serializable {
 							+ " FROM incident_data as incident, trip_data as trip"
 							+ " WHERE incident.date = trip.date"
 							+ " AND incident.vin = trip.vin"
-							+ " GROUP BY incident.date,incident.vin,trip.count"
+							+ " GROUP BY incident.date,incident.vin,incident.city,incident.model,trip.count"
 							+ " ORDER BY incident.date";
 					Dataset<Row> ubiData = spark.sql(sql);
 //					ubiData.show(10);

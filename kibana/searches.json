@@ -1,0 +1,129 @@
+[
+  {
+    "_id": "be323f60-e948-11e6-99da-93ec22c0ac1e",
+    "_type": "search",
+    "_source": {
+      "title": "Fuel-Efficient Driving Pattern",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "city",
+        "model"
+      ],
+      "sort": [
+        "_score",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"carevents\",\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"carevents\",\"key\":\"query\",\"value\":\"{\\\"constant_score\\\":{\\\"filter\\\":{\\\"bool\\\":{\\\"must\\\":[{\\\"terms\\\":{\\\"transGearPosition\\\":[\\\"fourth\\\",\\\"fifth\\\",\\\"sixth\\\",\\\"seventh\\\",\\\"eighth\\\"]}},{\\\"term\\\":{\\\"parkBrakeStatus\\\":0}},{\\\"term\\\":{\\\"brakePedalStatus\\\":0}},{\\\"range\\\":{\\\"speed\\\":{\\\"lte\\\":60}}},{\\\"range\\\":{\\\"accPedalPos\\\":{\\\"gte\\\":50}}}],\\\"must_not\\\":[{\\\"term\\\":{\\\"vin\\\":\\\"DUMMY\\\"}}]}}}}\",\"disabled\":false,\"alias\":null},\"query\":{\"constant_score\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"transGearPosition\":[\"fourth\",\"fifth\",\"sixth\",\"seventh\",\"eighth\"]}},{\"term\":{\"parkBrakeStatus\":0}},{\"term\":{\"brakePedalStatus\":0}},{\"range\":{\"speed\":{\"lte\":60}}},{\"range\":{\"accPedalPos\":{\"gte\":50}}}],\"must_not\":[{\"term\":{\"vin\":\"DUMMY\"}}]}}}},\"$state\":{\"store\":\"appState\"}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "f16e8cd0-e948-11e6-99da-93ec22c0ac1e",
+    "_type": "search",
+    "_source": {
+      "title": "Aggressive Driving Pattern",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "city",
+        "model"
+      ],
+      "sort": [
+        "_score",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"carevents\",\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"carevents\",\"key\":\"query\",\"value\":\"{\\\"constant_score\\\":{\\\"filter\\\":{\\\"bool\\\":{\\\"must\\\":[{\\\"terms\\\":{\\\"transGearPosition\\\":[\\\"fourth\\\",\\\"fifth\\\",\\\"sixth\\\",\\\"seventh\\\",\\\"eighth\\\"]}},{\\\"term\\\":{\\\"brakePedalStatus\\\":1}},{\\\"range\\\":{\\\"speed\\\":{\\\"gte\\\":50}}}],\\\"must_not\\\":[{\\\"term\\\":{\\\"vin\\\":\\\"DUMMY\\\"}}]}}}}\",\"disabled\":false,\"alias\":null},\"query\":{\"constant_score\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"transGearPosition\":[\"fourth\",\"fifth\",\"sixth\",\"seventh\",\"eighth\"]}},{\"term\":{\"brakePedalStatus\":1}},{\"range\":{\"speed\":{\"gte\":50}}}],\"must_not\":[{\"term\":{\"vin\":\"DUMMY\"}}]}}}},\"$state\":{\"store\":\"appState\"}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "902ca920-f8d4-11e6-b0b3-011c83deda87",
+    "_type": "search",
+    "_source": {
+      "title": "Actual Alerts",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "model",
+        "city",
+        "vin"
+      ],
+      "sort": [
+        "_score",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"caralerts\",\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"carevents\",\"key\":\"city\",\"negate\":true,\"value\":\"DUMMY\"},\"query\":{\"match\":{\"city\":{\"query\":\"DUMMY\",\"type\":\"phrase\"}}}},{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"carevents\",\"key\":\"model\",\"negate\":true,\"value\":\"DUMMY\"},\"query\":{\"match\":{\"model\":{\"query\":\"DUMMY\",\"type\":\"phrase\"}}}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}"
+      }
+    }
+  },
+  {
+    "_id": "f8710020-f8d0-11e6-9e34-5fa6c74f58d0",
+    "_type": "search",
+    "_source": {
+      "title": "Actual Events",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "vin",
+        "model",
+        "city"
+      ],
+      "sort": [
+        "_score",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"carevents\",\"filter\":[{\"meta\":{\"negate\":true,\"index\":\"carevents\",\"key\":\"vin\",\"value\":\"DUMMY\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"vin\":{\"query\":\"DUMMY\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"negate\":true,\"index\":\"carevents\",\"key\":\"city\",\"value\":\"DUMMY\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"city\":{\"query\":\"DUMMY\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"negate\":true,\"index\":\"carevents\",\"key\":\"model\",\"value\":\"DUMMY\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"model\":{\"query\":\"DUMMY\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "caa65da0-f8d2-11e6-b0b3-011c83deda87",
+    "_type": "search",
+    "_source": {
+      "title": "All Vehicles",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "model",
+        "city"
+      ],
+      "sort": [
+        "_score",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"carevents\",\"filter\":[{\"meta\":{\"negate\":true,\"index\":\"carevents\",\"key\":\"city\",\"value\":\"DUMMY\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"city\":{\"query\":\"DUMMY\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"negate\":true,\"index\":\"carevents\",\"key\":\"model\",\"value\":\"DUMMY\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"model\":{\"query\":\"DUMMY\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "a81ab3e0-242d-11e7-9166-e94e2d870343",
+    "_type": "search",
+    "_source": {
+      "title": "UBI Data",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "_score",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ubidata\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[{\"meta\":{\"negate\":true,\"index\":\"ubidata\",\"key\":\"vin\",\"value\":\"DUMMY\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"vin\":{\"query\":\"DUMMY\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  }
+]

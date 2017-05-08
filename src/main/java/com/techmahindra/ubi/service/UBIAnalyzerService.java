@@ -22,6 +22,8 @@ public class UBIAnalyzerService implements Serializable {
 				@Override
 				public void call(Row row) throws Exception {
 					String vin = row.getString(row.fieldIndex("vin"));
+					String city = row.getString(row.fieldIndex("city"));
+					String model = row.getString(row.fieldIndex("model"));
 					String date = row.getString(row.fieldIndex("date"));
 					float totalTrips = Float.valueOf(row.getLong(row.fieldIndex("trips")));
 					float tripsHavingOS = Float.valueOf(row.getLong(row.fieldIndex("OSCount")));
@@ -45,6 +47,8 @@ public class UBIAnalyzerService implements Serializable {
 						System.out.println("--------------------------");
 						UBIData data = new UBIData();
 						data.setVin(vin);
+						data.setCity(city);
+						data.setModel(model);
 						data.setInfoDateTime(date);
 						data.setDriverScore(driverScore);
 						data.setDriverRank(driverRank);

@@ -1,0 +1,27 @@
+[
+  {
+    "_id": "4956be10-edd4-11e6-ad0a-d13af71dc189",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Vehicle Telemetry Dashboard",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":9,\"id\":\"10270b30-edd5-11e6-bc9d-95e992b73a0c\",\"panelIndex\":1,\"row\":1,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":5,\"id\":\"35c8d530-edd5-11e6-bc9d-95e992b73a0c\",\"panelIndex\":2,\"row\":1,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"f53e9a00-f8d2-11e6-b0b3-011c83deda87\",\"panelIndex\":3,\"row\":1,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"d1f91a10-f8d3-11e6-b0b3-011c83deda87\",\"panelIndex\":4,\"row\":4,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":5,\"id\":\"1b13daa0-f8d4-11e6-b0b3-011c83deda87\",\"panelIndex\":5,\"row\":4,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":9,\"id\":\"ce93d990-f8d4-11e6-b0b3-011c83deda87\",\"panelIndex\":6,\"row\":4,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"66899e40-242e-11e7-9166-e94e2d870343\",\"panelIndex\":7,\"row\":7,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"size_x\":4,\"size_y\":3,\"panelIndex\":8,\"type\":\"visualization\",\"id\":\"84d824b0-242f-11e7-9166-e94e2d870343\",\"col\":5,\"row\":7},{\"size_x\":4,\"size_y\":3,\"panelIndex\":9,\"type\":\"visualization\",\"id\":\"5d08a540-242f-11e7-9166-e94e2d870343\",\"col\":9,\"row\":7}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-15m",
+      "refreshInterval": {
+        "display": "5 seconds",
+        "pause": true,
+        "section": 1,
+        "value": 5000
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  }
+]
