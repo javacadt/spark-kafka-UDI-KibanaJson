@@ -1,0 +1,8 @@
+video for spark session demo:
+
+https://mytube.techmahindra.com/app/video/gcc-2828c245-819e-4484-affa-62b2f54956fa 
+
+
+Also go through below link for basic understanding of what is Spark and it’s capabilities –
+
+http://spark.apach.org
